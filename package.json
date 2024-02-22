@@ -4,7 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "openshift": "nodeshift --expose --dockerImage=registry.access.redhat.com/rhscl/ubi8/nodejs-12",
+    "start": "node app.js"
   },
   "author": "",
   "license": "ISC",
@@ -17,5 +19,8 @@
     "querystring": "^0.2.1",
     "sanitize-html": "^2.12.1",
     "url": "^0.11.3"
+  },
+  "devDependencies": {
+    "nodeshift": "^11.0.0"
   }
 }
