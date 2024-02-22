@@ -43,6 +43,8 @@ app.post('/post_vehicle', (req, res) => {
 });
 
 // Express 애플리케이션을 3000번 포트에서 실행합니다.
-app.listen(3000, () => {
-  console.log('Server listening on port 3000');
+var ipaddress = process.env.OPENSHIFT_NODEJS_IP || "127.0.0.1";
+var port = process.env.OPENSHIFT_NODEJS_PORT || 8080;
+app.listen(port, ipaddress, () => {
+  console.log('Server listening on port 8080');
 });
