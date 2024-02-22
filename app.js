@@ -43,6 +43,6 @@ app.post('/post_vehicle', (req, res) => {
 });
 
 // Express 애플리케이션을 3000번 포트에서 실행합니다.
-app.listen(3000, () => {
-  console.log('Server listening on port 3000');
+app.listen(8080, () => {
+  console.log('Server listening on port 8080');
 });
