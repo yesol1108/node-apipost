@@ -1,20 +1,12 @@
-FROM registry.access.redhat.com/ubi8/nodejs-20
+FROM node:20-alpine3.18
 
-USER 0
-RUN fix-permissions ./
-USER 1001
+RUN mkdir /app
 
-RUN mkdir ./app
-WORKDIR $HOME/app
-COPY package.json .
-RUN npm install
-COPY node_modules ./node_modules
-COPY public ./public
-COPY views ./views
-COPY . ./
-
+WORKDIR /app
+COPY package.json /app
 RUN npm install
 
+COPY . /app
 EXPOSE 3000
 
 CMD ["node", "app.js"]
