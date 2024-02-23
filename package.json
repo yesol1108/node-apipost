@@ -5,7 +5,7 @@
   "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "openshift": "nodeshift --expose --dockerImage=registry.access.redhat.com/rhscl/ubi8/nodejs-20",
+    "openshift": "nodeshift --expose --dockerImage=registry.access.redhat.com/ubi8/nodejs-20",
     "start": "node app.js"
   },
   "files": [
@@ -13,16 +13,17 @@
     "app.js",
     "node_modules",
     "public",
-    "views"
+    "views",
+    "tmp"
   ],
   "author": "",
   "license": "ISC",
   "dependencies": {
     "ejs": "^3.1.9",
     "express": "^4.18.2",
-    "mogodb": "^0.0.1-security"
+    "mongodb": "^6.3.0"
   },
   "devDependencies": {
-    "nodeshift": "^11.0.0"
+    "nodeshift": "^2.1.1"
   }
 }
