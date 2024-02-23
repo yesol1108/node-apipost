@@ -11,7 +11,9 @@
   "files": [
     "package.json",
     "app.js",
-    "node_modules/"
+    "node_modules",
+    "public",
+    "views"
   ],
   "author": "",
   "license": "ISC",
