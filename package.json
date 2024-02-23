@@ -8,6 +8,11 @@
     "openshift": "nodeshift --expose --dockerImage=registry.access.redhat.com/rhscl/ubi8/nodejs-20",
     "start": "node app.js"
   },
+  "files": [
+    "package.json",
+    "app.js",
+    "node_modules/"
+  ],
   "author": "",
   "license": "ISC",
   "dependencies": {
