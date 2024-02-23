@@ -8,7 +8,7 @@ RUN mkdir ./app
 WORKDIR $HOME/app
 COPY package.json .
 RUN npm install
-COPY node_moduels ./node_moduels
+COPY node_modules ./node_modules
 COPY public ./public
 COPY views ./views
 COPY . ./
