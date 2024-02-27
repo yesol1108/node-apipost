@@ -19,14 +19,14 @@ const consumer = kafka.consumer({groupId: 'vehicle'})
 const initKafka = async () => {
     console.log("start subscribe kafka");
     await consumer.connect()
-    await consumer.subscribe({ topic: 'vehicle-movements', fromBeginning: true})
+    await consumer.subscribe({ topic: 'vehicle-positions', fromBeginning: true})
     await consumer.run ({
         eachMessage: async ({ topic, partition, message}) =>{
             console.log({
                 value: message.value.toString()
             })
 
-            // res.render("list.ejs", { list: message.value.toString() })
+            res.render("list.ejs", { list: message.value.toString() })
         }
     })
 }
