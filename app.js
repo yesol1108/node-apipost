@@ -26,7 +26,7 @@ const initKafka = async () => {
                 value: message.value.toString()
             })
 
-            res.render("list.ejs", { list: message.value.toString() })
+            // res.render("list.ejs", { list: message.value.toString() })
         }
     })
 }
