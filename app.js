@@ -29,7 +29,7 @@ const initKafka = async () => {
     })
 }
 
-app.get('/consume-message', (req,res) => {
+app.get('/view', (req,res) => {
     initKafka()
 })
 
