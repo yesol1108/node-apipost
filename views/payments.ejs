@@ -53,7 +53,7 @@
 		<header class="masthead text-center text-white">
 			<div class="masthead-content">
 				<div class="container">
-					<h1 class="masthead-heading mb-0">차량 데이터</h1>
+					<h1 class="masthead-heading mb-0">결제 데이터</h1>
 				</div>
 			</div>
 		</header>
@@ -63,12 +63,10 @@
             <% for (var i = 0; i < list.length; i++) { %>
                 <div class="card mt-3">
 					<div class="card-body">
-						<h5 class="card-title">차량 번호 : <%=list[i].vehicle.id %>/<%=list[i].vehicle.type %>/<%=list[i].vehicle.model %></h5>
-						<p class="card-text">움직임 보고 : <%=list[i].movementsReported %></p>
-						<p class="card-text">처음 위도 : <%=list[i].initialLatitude %></p>
-						<p class="card-text">처음 경도 : <%=list[i].initialLongitude %></p>
-						<p class="card-text">마지막 위도 : <%=list[i].finalLatitude %></p>
-						<p class="card-text">마지막 경도 : <%=list[i].finalLongitude %></p>
+						<h5 class="card-title">최근 결제 : <%=list[i].latest %></h5>
+						<p class="card-text">횟수 : <%=list[i].count %></p>
+						<p class="card-text">총 합 : <%=list[i].sum %></p>
+						<p class="card-text">평균 : <%=list[i].average %></p>
 					</div>
 				</div>
             <% } %>

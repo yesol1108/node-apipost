@@ -64,6 +64,18 @@ app.get('/list-vehicles', (req,res) => {
     });
 })
 
+
+app.get('/list-payment', (req,res) => {
+    const data = request.get({
+        url: "http://large-payments-quarkus-smallrye-kafka-efnalf-kafka-cluster.apps.na46r.prod.ole.redhat.com/largePayments"
+    }, function(error, response, body) {
+        console.log(JSON.parse(body));
+
+        res.render("payments.ejs", { list : JSON.parse(body)});
+    });
+})
+
+
 // POST 
 app.post('/post_vehicle', (req, res) => {
   // 요청 body에서 JSON 데이터를 추출하여 사용할 수 있습니다.
