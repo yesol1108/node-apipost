@@ -44,6 +44,8 @@
 						</li>
 						<li class="nav-item">
 							<a class="nav-link" href="/list-vehicles">차량</a>
+						</li>
+						<li class="nav-item">
 							<a class="nav-link" href="/list-payment">결제</a>
 						</li>
 					</ul>
@@ -64,7 +66,7 @@
             <% for (var i = 0; i < list.length; i++) { %>
                 <div class="card mt-3">
 					<div class="card-body">
-						<h5 class="card-title">차량 번호 : <%=list[i].vehicle.id %>/<%=list[i].vehicle.type %>/<%=list[i].vehicle.model %></h5>
+						<h5 class="card-title">차량 번호 <%=list[i].vehicle.id %> (<%=list[i].vehicle.type %>) <%=list[i].vehicle.model %></h5>
 						<p class="card-text">움직임 보고 : <%=list[i].movementsReported %></p>
 						<p class="card-text">처음 위도 : <%=list[i].initialLatitude %></p>
 						<p class="card-text">처음 경도 : <%=list[i].initialLongitude %></p>

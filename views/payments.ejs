@@ -44,6 +44,8 @@
 						</li>
 						<li class="nav-item">
 							<a class="nav-link" href="/list-vehicles">차량</a>
+						</li>
+						<li class="nav-item">
 							<a class="nav-link" href="/list-payment">결제</a>
 						</li>
 					</ul>
@@ -61,16 +63,14 @@
 
 		<div class="content container mt-4 mb-4" id="contents">
 			<!-- 글 목록 -->
-            <% for (var i = 0; i < list.length; i++) { %>
                 <div class="card mt-3">
 					<div class="card-body">
-						<h5 class="card-title">최근 결제 : <%=list[i].latest %></h5>
-						<p class="card-text">횟수 : <%=list[i].count %></p>
-						<p class="card-text">총 합 : <%=list[i].sum %></p>
-						<p class="card-text">평균 : <%=list[i].average %></p>
+						<h5 class="card-title">최근 결제 : <%=list.latest %></h5>
+						<p class="card-text">횟수 : <%=list.count %></p>
+						<p class="card-text">총 합 : <%=list.sum %></p>
+						<p class="card-text">평균 : <%=list.average %></p>
 					</div>
 				</div>
-            <% } %>
 		</div>
 
 		<!-- Footer -->
