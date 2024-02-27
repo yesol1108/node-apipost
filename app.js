@@ -1,5 +1,6 @@
 const express = require('express');
 const app = express();
+const { Kafka } = require('kafkajs')
 const {connectDB, getDB } = require('./dbconnect.js')
 
 // JSON 형태의 요청 body를 파싱하기 위해 express.json() 미들웨어를 사용합니다.
@@ -8,6 +9,29 @@ app.use(express.urlencoded({ extended: false }));
 app.use(express.static('public'));
 app.set('view engint', 'ejs')
 
+const kafka = new Kafka({
+    clientId: 'my-cluster-kafka',
+    brokers: ['http://my-cluster-kafka-bootstrap-efnalf-kafka-cluster.apps.na46r.prod.ole.redhat.com']
+  })
+
+const consumer = kafka.consumer({groupId: 'vehicle'})
+
+const initKafka = async () => {
+    console.log("start subscribe kafka");
+    await consumer.connect()
+    await consumer.subscribe({ topic: 'vehicle-positions', fromBeginning: true})
+    await consumer.run ({
+        eachMessage: async ({ topic, partition, message}) =>{
+            console.log({
+                value: message.value.toString()
+            })
+        }
+    })
+}
+
+app.get('/consume-messgae', (req,res) => {
+    initKafka()
+})
 
 app.get('/', (req, res) => {
     res.sendFile(__dirname+"/views/index.html");
