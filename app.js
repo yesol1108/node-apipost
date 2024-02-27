@@ -14,12 +14,12 @@ const kafka = new Kafka({
     brokers: ['my-cluster-kafka-bootstrap.efnalf-kafka-cluster.svc:9092']
   })
 
-const consumer = kafka.consumer({groupId: 'vehicle'})
+const consumer = kafka.consumer({groupId: 'vehicle-status-check-1'})
 
 const initKafka = async () => {
     console.log("start subscribe kafka");
     await consumer.connect()
-    await consumer.subscribe({ topic: 'vehicle-positions', fromBeginning: true})
+    await consumer.subscribe({ topic: 'vehicles', fromBeginning: true})
     await consumer.run ({
         eachMessage: async ({ topic, partition, message}) =>{
             console.log({
