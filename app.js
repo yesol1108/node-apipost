@@ -25,13 +25,11 @@ const initKafka = async () => {
             console.log({
                 value: message.value.toString()
             })
-
-            res.render("list.ejs", { list: message.value.toString() })
         }
     })
 }
 
-app.get('/consume-message', (req,res) => {
+app.get('/consume-messgae', (req,res) => {
     initKafka()
 })
 
