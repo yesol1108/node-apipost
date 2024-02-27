@@ -11,7 +11,7 @@ app.set('view engint', 'ejs')
 
 const kafka = new Kafka({
     clientId: 'my-cluster-kafka',
-    brokers: ['http://my-cluster-kafka-bootstrap-efnalf-kafka-cluster.apps.na46r.prod.ole.redhat.com']
+    brokers: ['my-cluster-kafka-bootstrap.efnalf-kafka-cluster.svc:9092']
   })
 
 const consumer = kafka.consumer({groupId: 'vehicle'})
