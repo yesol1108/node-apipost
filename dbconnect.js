@@ -8,7 +8,7 @@ module.exports = {
     if (dbconnection) {
        resolve();
     }
-    const url = "mongodb+srv://lotrob88:XzaEhDYShKgl5AUC@cluster0.uhd6ccg.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0";
+    const url = "";
     MongoClient.connect(url)
       .then((client) => {
         dbconnection = client.db("vehicles");
